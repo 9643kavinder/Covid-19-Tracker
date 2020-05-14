@@ -1,2 +1,2 @@
 # Covid-19-Tracker
-trackingcorona.herokuapp.com
+https://www.trackingcorona.herokuapp.com
