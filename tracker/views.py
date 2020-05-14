@@ -13,10 +13,10 @@ def home(request):
         'active': data['statewise'][0]['active'],
         'recovered': data['statewise'][0]['recovered'],
         'deceased': data['statewise'][0]['deaths'],
-        'deltaconfirmed': data['statewise'][0]['deltaconfirmed'],
-        'deltaactive': int(data['statewise'][0]['deltaconfirmed'])-(int(data['statewise'][0]['deltarecovered'])+int(data['statewise'][0]['deltadeaths'])),
-        'deltarecovered': data['statewise'][0]['deltarecovered'],
-        'deltadeaths': data['statewise'][0]['deltadeaths']
+        'deltaconfirmed': data['cases_time_series'][-1]['dailyconfirmed'],
+        'deltaactive': int(data['cases_time_series'][-1]['dailyconfirmed'])-(int(data['cases_time_series'][-1]['dailyrecovered'])+int(data['cases_time_series'][-1]['dailydeceased'])),
+        'deltarecovered': data['cases_time_series'][-1]['dailyrecovered'],
+        'deltadeaths': data['cases_time_series'][-1]['dailydeceased']
     }
     # print(context)
     series_length = len(data['cases_time_series']) - 31
