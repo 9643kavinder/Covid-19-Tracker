@@ -180,6 +180,7 @@
     const confirmed = [];
     const recovered = [];
     const deceased  = [];
+    var ctx = document.getElementById('myChart').getContext('2d');
     const url = 'https://api.covid19india.org/data.json';
     async function getInfo(){
         const response = await fetch(url);
@@ -198,7 +199,7 @@
         }
     }
     getInfo();
-    var ctx = document.getElementById('myChart').getContext('2d');
+
 var chart = new Chart(ctx, {
     type: 'line',
 
@@ -266,6 +267,18 @@ var myChart = new Chart(ctx, {
     }]
   }
 });
+</script>
+<script>
+
+  setTimeout(function(){
+    chart.update();
+    myChart.update();
+    },
+    300
+    );
+  setInterval(function(){ chart.update();myChart.update();}, 30000);
+
+
 </script>
 
     {% endblock %}
