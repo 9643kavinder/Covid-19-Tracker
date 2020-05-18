@@ -2,5 +2,5 @@
 http://trackingcorona.herokuapp.com/
 
 
-# LICENSE
-Licenses under [MIT LICENSE](LICENSE)
+# License & Copyright
+Licensed under [MIT LICENSE](LICENSE).
